@@ -12,20 +12,34 @@ document.addEventListener('DOMContentLoaded', async () => {
         .then(data => {
             if (data.length === 0) {
                 console.log('Nenhum item adicionado no banco de dados!')
+                container.innerHTML += `
+                <div  class="produtos">
+                    <img src="https://webinsider.com.br/wp-content/uploads/2019/01/Erro-404-1-1-1024x645.jpg" alt="">
+                    <h3>BANCO DE DADOS FORA DO AR</h3>
+                    <p>Contate nos via whatsapp</p>
+                    <a href="#" target="_blank">
+                        <button id="">WHATSAPP</button>
+                    </a>`
             } else {
-                for (let i = 0; i < data.length; i++) {
-                    container.innerHTML =
+                data.map((val, index) => {
+                    container.innerHTML +=
                         `<div class="produtos">
-                        <img src="${data[i].link}" alt="">
-                        <h3>${data[i].name}</h3>
-                        <p>R$ <strong>${data[i].price}</strong></p>
-                        </div>`
-                }
-
-                console.log(data.length);
+                    <img src="${val.link}" alt="">
+                    <h3>${val.name}</h3>
+                    <p>R$ <strong>${val.price}</strong></p>
+                    </div>`
+                })
             }
         })
         .catch(error => {
             console.error('Erro:', error);
+            container.innerHTML += `
+            <div class="produtos">
+                <img src="https://webinsider.com.br/wp-content/uploads/2019/01/Erro-404-1-1-1024x645.jpg" alt="">
+                <h3>BANCO DE DADOS FORA DO AR</h3>
+                <p>Contate nos via whatsapp</p>
+                <a href="#" target="_blank">
+                    <button id="">WHATSAPP</button>
+                </a>`
         });
 })

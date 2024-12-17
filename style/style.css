@@ -1,19 +1,22 @@
 @charset "UTF-8";
 
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+
 * {
     margin: 0;
     padding: 0;
 }
 
-/* @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-
-:root {
-    --fonteTitulo: "Bebas Nueue", sans-serif;
-} */
 
 body {
     background-image: url("../imagens/fundo-limpeza-2.png");
     background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 header {
@@ -51,29 +54,34 @@ header button {
     margin-left: -4px;
 }
 
-header button:hover{
+header button:hover {
     background-color: rgba(255, 255, 255, 0.664);
 }
 
-header a{
+header a {
     text-decoration: none;
 }
 
 .container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    /* Alinha horizontalmente ao centro */
     margin: auto;
     padding: 10px;
     margin-top: 50px;
     max-width: 1000px;
 }
 
+
 .produtos {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
     display: block;
-    background-color: blanchedalmond;
+    background-color: rgba(255, 255, 255, 0.767);
     width: 200px;
     border-radius: 10px;
-    box-shadow: 2px 3px 5px black;
+    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.445);
     margin: 10px;
     padding: 10px;
     text-align: center;
@@ -83,25 +91,31 @@ header a{
     width: 100px;
 }
 
+.produtos img:hover{
+    transition: .1s;
+    transform: scale(1.1);
+}
+
 
 /* CONFIGURAÇÕES ESTILO PAINEL */
 
-h1{
+h1 {
     text-align: center;
     color: white;
     text-shadow: 1px 1px 5px black;
 }
 
-form{
+form {
     background-color: black;
-    width: 800px;
+    max-width: 800px;
     margin: auto;
+    margin-top: 40px;
     border-radius: 10px;
     box-shadow: 2px 3px 6px black;
     text-align: center;
 }
 
-form input{
+form input {
     margin: 10px;
     padding: 5px;
     border: none;
@@ -110,7 +124,7 @@ form input{
     height: 30px;
 }
 
-form textarea{
+form textarea {
     margin: 10px;
     padding: 5px;
     max-width: 400px;
@@ -121,7 +135,7 @@ form textarea{
     border-radius: 2px;
 }
 
-form button{
+form button {
     background-color: white;
     margin: 10px;
     width: 100px;
@@ -130,9 +144,17 @@ form button{
     border-radius: 5px;
 }
 
-form button:hover{
+form button:hover {
     transform: scale(1.1);
     transition: .1s;
+}
+
+form select {
+    margin: 10px;
+    padding: 5px;
+    width: 210px;
+    height: 40px;
+    border: none;
 }
 
 @media (max-width: 600px) {
@@ -140,11 +162,8 @@ form button:hover{
         max-width: 400px;
     }
 
-    .produtos {
-        width: 100px;
-    }
-
-    .produtos img {
-        width: 80px;
+    form {
+        margin-top: 20px;
+        max-width: 400px;
     }
 }
