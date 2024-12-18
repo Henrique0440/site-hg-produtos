@@ -11,7 +11,7 @@
 }
 
 
-body {
+html, body {
     background-image: url("../imagens/fundo-limpeza-2.png");
     background-position: center;
     background-repeat: no-repeat;
