@@ -13,6 +13,7 @@
 
 
 html, body {
+    background-color: black;
     background-image: url("../imagens/fundo-limpeza-2.png");
     background-position: center;
     background-repeat: no-repeat;
