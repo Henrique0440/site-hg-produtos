@@ -97,6 +97,10 @@ header a {
     transform: scale(1.1);
 }
 
+.produtos h3, p{
+    margin-bottom: 5px;
+}
+
 
 /* CONFIGURAÇÕES ESTILO PAINEL */
 
